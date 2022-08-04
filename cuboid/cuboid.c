@@ -7,42 +7,61 @@ void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len);
 
 void main(int argc, char ** argv)
 {
+	int x, y, z;
+	int debug = 0;
+
 	// Check to make sure user passes three arguments:
-	if (argc != 3)
+	if (argc != 4)
 	{
-		printf("Please pass the following three arguments: x, y, z\n");
-		return;
+		if ((argc == 5) && (*argv[4] == 'd')) {
+			debug = 1;
+		}
+		else {
+			printf("Please pass the following three arguments: x, y, z, %d\n", argc);
+			return;
+		}
 	}	
+	x = atoi(argv[1]);
+	y = atoi(argv[2]);
+	z = atoi(argv[3]);
+
+	/* if any args bad exit with error */
+	if (((x <= 0) || (x > 9)) && !debug)
+		exit(1);
+	if (((y <= 0) || (y > 9)) && !debug)
+		exit(1);
+	if (((z <= 0) || (z > 9)) && !debug)
+		exit(1);
+
 	// Print out and store cuboid dimensions
 	printf("Cuboid length: ");
-	printf(argv[1]);
-	int x = argv[1];
-	printf("\n");
+	printf("%d\n", x);
 
 	printf("Cuboid width: ");
-	printf(argv[2]);
-	int y = argv[2];
-	printf("\n");
+	printf("%d\n", y);
 
 	printf("Cuboid height: ");
-	printf(argv[3]);
-	int z = argv[3];
-	printf("\n");
+	printf("%d\n", z);
 
-	// Allocate memory to store cuboid shape characters. Multiple by
-	// 2 because that will probably be enough space
-	char * cuboid = malloc(x * y * z * 2);
+	if (debug)
+		return;
+
+	// Allocate memory to store cuboid shape characters.
+	// display is (1 + y + z) * (3*x+y+z)
+        // if display is square and spaces after.. so this is safe
+
+	char * cuboid = malloc((1 + y + z) * (3*x+y+z));
 
 	// Generate the cuboid output we can pass to printf to print cuboid.
-	generate_cuboid(&cuboid, x, y, z);
+	generate_cuboid(cuboid, x, y, z);
 
-	printf(cuboid);
+	printf("%s", cuboid);
 	printf("\n");
 }
 
 void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len)
 {
-	int lines = y_len + z_len;
+	int lines = z_len + y_len;
 	int index = 0;
 	int i, j;
 	for (i = 0; i < lines; i++)
