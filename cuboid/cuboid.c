@@ -3,34 +3,42 @@
 #include <string.h>
 #include <stdio.h>
 
-void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len);
+#define Bool _Bool
+#define true 1
+#define false 0
+
+
+void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len, Bool debug);
 
 void main(int argc, char ** argv)
 {
 	int x, y, z;
-	int debug = 0;
+	Bool debug = false;
+	Bool fail = false;
 
 	// Check to make sure user passes three arguments:
-	if (argc != 4)
-	{
-		if ((argc == 5) && (*argv[4] == 'd')) {
-			debug = 1;
-		}
-		else {
-			printf("Please pass the following three arguments: x, y, z, %d\n", argc);
-			return;
-		}
+	if ((argc == 5) && (*argv[4] == 'd')) {
+		printf("enable debug\n");
+		debug = true;
+		argc = 4;
+	}
+	if (argc != 4) {
+		printf("Please pass the following three arguments: x, y, z, %d\n", argc);
+		return;
 	}	
 	x = atoi(argv[1]);
 	y = atoi(argv[2]);
 	z = atoi(argv[3]);
 
 	/* if any args bad exit with error */
-	if (((x <= 0) || (x > 9)) && !debug)
-		exit(1);
-	if (((y <= 0) || (y > 9)) && !debug)
-		exit(1);
-	if (((z <= 0) || (z > 9)) && !debug)
+	if ((x <= 0) || (x > 9))
+		fail = 1;
+	if ((y <= 0) || (y > 9))
+		fail = 1;
+	if ((z <= 0) || (z > 9))
+		fail = 1;
+
+	if (fail && !debug)
 		exit(1);
 
 	// Print out and store cuboid dimensions
@@ -43,37 +51,44 @@ void main(int argc, char ** argv)
 	printf("Cuboid height: ");
 	printf("%d\n", z);
 
-	if (debug)
-		return;
+	if (fail)
+		exit(1);
 
 	// Allocate memory to store cuboid shape characters.
 	// display is (1 + y + z) * (3*x+y+z)
         // if display is square and spaces after.. so this is safe
 
-	char * cuboid = malloc((1 + y + z) * (3*x+y+z));
+	int buflen = (1 + y + z) * (3*x+y+z);
+	char * cuboid = malloc(buflen);
+	memset(cuboid, ' ', buflen);
+	cuboid[buflen-1] = 0;
 
 	// Generate the cuboid output we can pass to printf to print cuboid.
-	generate_cuboid(cuboid, x, y, z);
+	generate_cuboid(cuboid, x, y, z, debug);
 
 	printf("%s", cuboid);
 	printf("\n");
 }
 
-void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len)
+void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len, Bool debug)
 {
-	int lines = z_len + y_len;
+	int lines = z_len + y_len + 1;
 	int index = 0;
-	int i, j;
+	int i, j, k;
+	k = index;
 	for (i = 0; i < lines; i++)
 	{
-		int k = index;
 
 		// Calculate number of spaces for this line
 		int spaces = y_len - i;
+
+		if (debug)
+			printf("a1: lines:%d,  spaces:%d\n", lines, spaces);
 		spaces = abs(spaces);
-		while (spaces > 0)
+		while (spaces > 0) {
 			cuboid[k++] = ' ';
 			spaces--;
+		}
 
 		// Insert first edge on each line
 		if ((i <= y_len) && i != 0)
@@ -98,7 +113,7 @@ void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len)
 		{
 			cuboid[k++] = '_';
 
-			if ((i = 0))
+			if ((i == 0))
 			{
 				cuboid[k++] = ' ';
 				cuboid[k++] = ' ';
@@ -118,14 +133,14 @@ void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len)
 
 		// Calculate remaining edges
 		int side_chars;
-		if (i <= z_len) {
+		if (i <= y_len) {
 			side_chars = i;
 		}
 		else {
 			side_chars = lines - i;
 		}
 		for (m = 0; m < side_chars; m++) {
-			if ((i = 0))
+			if ((i == 0))
 			{
 				cuboid[k++] = ' ';
 				cuboid[k++] = ' ';
@@ -149,6 +164,7 @@ void generate_cuboid(char cuboid[], int x_len, int y_len, int z_len)
 				}
 			}
 		}
-		index = k;	
+		cuboid[k++] = '\n';
+		index = k;
 	}
 }
