@@ -1,0 +1,179 @@
+Command name abbreviations are allowed if unambiguous.
+(gdb) bt
+#0  0x00005638f820da76 in earth ()
+#1  0x00005638f820da5a in of ()
+#2  0x00005638f820d9ec in percent ()
+#3  0x00005638f820d9d4 in four ()
+#4  0x00005638f820d933 in eighty ()
+#5  0x00005638f820d91b in up ()
+#6  0x00005638f820d903 in makes ()
+#7  0x00005638f820d8eb in mantle ()
+#8  0x00005638f820d8d3 in the ()
+#9  0x00005638f820db32 in no ()
+#10 0x00005638f820db1a in waitttt ()
+#11 0x00005638f820d9a1 in battelle ()
+#12 0x00005638f820da4d in of ()
+#13 0x00005638f820d9ec in percent ()
+#14 0x00005638f820d9d4 in four ()
+#15 0x00005638f820d933 in eighty ()
+#16 0x00005638f820d91b in up ()
+#17 0x00005638f820d903 in makes ()
+#18 0x00005638f820d8eb in mantle ()
+#19 0x00005638f820d8d3 in the ()
+#20 0x00005638f820db32 in no ()
+#21 0x00005638f820db1a in waitttt ()
+#22 0x00005638f820db02 in nothing ()
+#23 0x00005638f820da40 in of ()
+#24 0x00005638f820d9ec in percent ()
+#25 0x00005638f820d9d4 in four ()
+#26 0x00005638f820d933 in eighty ()
+#27 0x00005638f820d91b in up ()
+#28 0x00005638f820d903 in makes ()
+#29 0x00005638f820d8eb in mantle ()
+#30 0x00005638f820d8d3 in the ()
+#31 0x00005638f820db32 in no ()
+#32 0x00005638f820db1a in waitttt ()
+#33 0x00005638f820dae7 in the_moon ()
+#34 0x00005638f820da2e in of ()
+#35 0x00005638f820d9ec in percent ()
+#36 0x00005638f820d9d4 in four ()
+#37 0x00005638f820d933 in eighty ()
+#38 0x00005638f820d91b in up ()
+#39 0x00005638f820d903 in makes ()
+#40 0x00005638f820d8eb in mantle ()
+#41 0x00005638f820d8d3 in the ()
+#42 0x00005638f820db32 in no ()
+#43 0x00005638f820db1a in waitttt ()
+#44 0x00005638f820dacc in the_ocean ()
+#45 0x00005638f820da1c in of ()
+#46 0x00005638f820d9ec in percent ()
+#47 0x00005638f820d9d4 in four ()
+#48 0x00005638f820d933 in eighty ()
+#49 0x00005638f820d91b in up ()
+#50 0x00005638f820d903 in makes ()
+#51 0x00005638f820d8eb in mantle ()
+#52 0x00005638f820d8d3 in the ()
+#53 0x00005638f820db32 in no ()
+#54 0x00005638f820db1a in waitttt ()
+---Type <return> to continue, or q <return> to quit---
+#55 0x00005638f820dab1 in us ()
+#56 0x00005638f820da0a in of ()
+#57 0x00005638f820d9ec in percent ()
+#58 0x00005638f820d9d4 in four ()
+#59 0x00005638f820d933 in eighty ()
+#60 0x00005638f820d91b in up ()
+#61 0x00005638f820d903 in makes ()
+#62 0x00005638f820d8eb in mantle ()
+#63 0x00005638f820d8d3 in the ()
+#64 0x00005638f820d8a3 in main ()
+(gdb) up
+#12 0x00005638f820da4d in of ()
+(gdb) down
+#11 0x00005638f820d9a1 in battelle ()
+(gdb) dissass battelle
+Undefined command: "dissass".  Try "help".
+(gdb) disass battelle
+Dump of assembler code for function battelle:
+   0x00005638f820d936 <+0>: push   %rbp
+   0x00005638f820d937 <+1>: mov    %rsp,%rbp
+   0x00005638f820d93a <+4>: sub    $0x10,%rsp
+   0x00005638f820d93e <+8>: mov    $0x0,%edi
+   0x00005638f820d943 <+13>:    callq  0x5638f820d700 <time@plt>
+   0x00005638f820d948 <+18>:    mov    %eax,%edi
+   0x00005638f820d94a <+20>:    callq  0x5638f820d6f0 <srand@plt>
+   0x00005638f820d94f <+25>:    movss  0x271(%rip),%xmm0        # 0x5638f820dbc8
+   0x00005638f820d957 <+33>:    movss  %xmm0,-0x10(%rbp)
+   0x00005638f820d95c <+38>:    movl   $0x64,-0xc(%rbp)
+   0x00005638f820d963 <+45>:    callq  0x5638f820d730 <rand@plt>
+   0x00005638f820d968 <+50>:    mov    %eax,-0x8(%rbp)
+   0x00005638f820d96b <+53>:    mov    -0x8(%rbp),%eax
+   0x00005638f820d96e <+56>:    mov    %eax,%esi
+   0x00005638f820d970 <+58>:    lea    0x24d(%rip),%rdi        # 0x5638f820dbc4
+   0x00005638f820d977 <+65>:    mov    $0x0,%eax
+   0x00005638f820d97c <+70>:    callq  0x5638f820d6e0 <printf@plt>
+   0x00005638f820d981 <+75>:    mov    0x201688(%rip),%rax        # 0x5638f840f010 <stdout@@GLIBC_2.2.5>
+   0x00005638f820d988 <+82>:    mov    %rax,%rdi
+   0x00005638f820d98b <+85>:    callq  0x5638f820d710 <fflush@plt>
+   0x00005638f820d990 <+90>:    movl   $0x2,-0x4(%rbp)
+   0x00005638f820d997 <+97>:    mov    $0x5,%edi
+   0x00005638f820d99c <+102>:   callq  0x5638f820db05 <waitttt>
+=> 0x00005638f820d9a1 <+107>:   cvtsi2ssl -0xc(%rbp),%xmm0
+   0x00005638f820d9a6 <+112>:   mulss  -0x10(%rbp),%xmm0
+   0x00005638f820d9ab <+117>:   movss  0x219(%rip),%xmm1        # 0x5638f820dbcc
+   0x00005638f820d9b3 <+125>:   divss  %xmm1,%xmm0
+   0x00005638f820d9b7 <+129>:   movss  %xmm0,-0x10(%rbp)
+   0x00005638f820d9bc <+134>:   nop
+   0x00005638f820d9bd <+135>:   leaveq 
+   0x00005638f820d9be <+136>:   retq   
+End of assembler dump.
+(gdb) x $rsp
+0x7ffc39cec3b0: 0x3f652bd4
+(gdb) 
+0x7ffc39cec3b4: 0x00000064
+(gdb) 
+0x7ffc39cec3b8: 0x5e1a23f6
+(gdb) 
+0x7ffc39cec3bc: 0x00000002
+(gdb) 
+0x7ffc39cec3c0: 0x39cec3e0
+(gdb) 
+0x7ffc39cec3c4: 0x00007ffc
+(gdb) print $rsp+8
+$1 = (void *) 0x7ffc39cec3b8
+(gdb) disass battelle
+Dump of assembler code for function battelle:
+   0x00005638f820d936 <+0>: push   %rbp
+   0x00005638f820d937 <+1>: mov    %rsp,%rbp
+   0x00005638f820d93a <+4>: sub    $0x10,%rsp
+   0x00005638f820d93e <+8>: mov    $0x0,%edi
+   0x00005638f820d943 <+13>:    callq  0x5638f820d700 <time@plt>
+   0x00005638f820d948 <+18>:    mov    %eax,%edi
+   0x00005638f820d94a <+20>:    callq  0x5638f820d6f0 <srand@plt>
+   0x00005638f820d94f <+25>:    movss  0x271(%rip),%xmm0        # 0x5638f820dbc8
+   0x00005638f820d957 <+33>:    movss  %xmm0,-0x10(%rbp)
+   0x00005638f820d95c <+38>:    movl   $0x64,-0xc(%rbp)
+   0x00005638f820d963 <+45>:    callq  0x5638f820d730 <rand@plt>
+   0x00005638f820d968 <+50>:    mov    %eax,-0x8(%rbp)
+   0x00005638f820d96b <+53>:    mov    -0x8(%rbp),%eax
+   0x00005638f820d96e <+56>:    mov    %eax,%esi
+   0x00005638f820d970 <+58>:    lea    0x24d(%rip),%rdi        # 0x5638f820dbc4
+   0x00005638f820d977 <+65>:    mov    $0x0,%eax
+   0x00005638f820d97c <+70>:    callq  0x5638f820d6e0 <printf@plt>
+   0x00005638f820d981 <+75>:    mov    0x201688(%rip),%rax        # 0x5638f840f010 <stdout@@GLIBC_2.2.5>
+   0x00005638f820d988 <+82>:    mov    %rax,%rdi
+   0x00005638f820d98b <+85>:    callq  0x5638f820d710 <fflush@plt>
+   0x00005638f820d990 <+90>:    movl   $0x2,-0x4(%rbp)
+   0x00005638f820d997 <+97>:    mov    $0x5,%edi
+   0x00005638f820d99c <+102>:   callq  0x5638f820db05 <waitttt>
+=> 0x00005638f820d9a1 <+107>:   cvtsi2ssl -0xc(%rbp),%xmm0
+   0x00005638f820d9a6 <+112>:   mulss  -0x10(%rbp),%xmm0
+   0x00005638f820d9ab <+117>:   movss  0x219(%rip),%xmm1        # 0x5638f820dbcc
+   0x00005638f820d9b3 <+125>:   divss  %xmm1,%xmm0
+   0x00005638f820d9b7 <+129>:   movss  %xmm0,-0x10(%rbp)
+   0x00005638f820d9bc <+134>:   nop
+   0x00005638f820d9bd <+135>:   leaveq 
+   0x00005638f820d9be <+136>:   retq   
+End of assembler dump.
+(gdb) print flag
+No symbol "flag" in current context.
+(gdb) x/10iw $sp
+   0x7ffc39cec3b0:  (bad)  
+   0x7ffc39cec3b1:  sub    0x3f(%rbp),%esp
+   0x7ffc39cec3b4:  add    %al,%fs:(%rax)
+   0x7ffc39cec3b7:  add    %dh,%dh
+   0x7ffc39cec3b9:  and    (%rdx),%ebx
+   0x7ffc39cec3bb:  pop    %rsi
+   0x7ffc39cec3bc:  add    (%rax),%al
+   0x7ffc39cec3be:  add    %al,(%rax)
+   0x7ffc39cec3c0:  loopne 0x7ffc39cec385
+   0x7ffc39cec3c2:  (bad)  
+(gdb) x/10w $sp
+0x7ffc39cec3b0: 0x3f652bd4  0x00000064  0x5e1a23f6  0x00000002
+0x7ffc39cec3c0: 0x39cec3e0  0x00007ffc  0xf820da4d  0x00005638
+0x7ffc39cec3d0: 0x00000044  0x00000000
+(gdb) 
+0x7ffc39cec3d8: 0x00000044
+(gdb) 
+0x7ffc39cec3dc: 0x00000004
+(gdb) 
+

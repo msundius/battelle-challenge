@@ -1,0 +1,110 @@
+0x67b779c2
+(gdb) bt
+#0  0x000055f86e9cb9e0 in done () at easy_core.c:99
+#1  0x000055f86e9cb9c4 in be (path=1) at easy_core.c:88
+#2  0x000055f86e9cb9a4 in can (path=1) at easy_core.c:78
+#3  0x000055f86e9cb98c in it () at easy_core.c:73
+#4  0x000055f86e9cb960 in battelle () at easy_core.c:66
+#5  0x000055f86e9cb8f7 in debugging () at easy_core.c:53
+#6  0x000055f86e9cb8eb in when () at easy_core.c:48
+#7  0x000055f86e9cb8df in useful () at easy_core.c:43
+#8  0x000055f86e9cb9bd in be (path=0) at easy_core.c:85
+#9  0x000055f86e9cb9a4 in can (path=0) at easy_core.c:78
+#10 0x000055f86e9cb8d3 in dumps () at easy_core.c:38
+#11 0x000055f86e9cb8c2 in core () at easy_core.c:33
+#12 0x000055f86e9cb89e in main (argc=1, argv=0x7fffc0b4e2d8) at easy_core.c:27
+(gdb) bt
+#0  0x000055f86e9cb9e0 in done () at easy_core.c:99
+#1  0x000055f86e9cb9c4 in be (path=1) at easy_core.c:88
+#2  0x000055f86e9cb9a4 in can (path=1) at easy_core.c:78
+#3  0x000055f86e9cb98c in it () at easy_core.c:73
+#4  0x000055f86e9cb960 in battelle () at easy_core.c:66
+#5  0x000055f86e9cb8f7 in debugging () at easy_core.c:53
+#6  0x000055f86e9cb8eb in when () at easy_core.c:48
+#7  0x000055f86e9cb8df in useful () at easy_core.c:43
+#8  0x000055f86e9cb9bd in be (path=0) at easy_core.c:85
+#9  0x000055f86e9cb9a4 in can (path=0) at easy_core.c:78
+#10 0x000055f86e9cb8d3 in dumps () at easy_core.c:38
+#11 0x000055f86e9cb8c2 in core () at easy_core.c:33
+#12 0x000055f86e9cb89e in main (argc=1, argv=0x7fffc0b4e2d8) at easy_core.c:27
+(gdb) up
+#5  0x000055f86e9cb8f7 in debugging () at easy_core.c:53
+53  in easy_core.c
+(gdb) down
+#4  0x000055f86e9cb960 in battelle () at easy_core.c:66
+66  in easy_core.c
+(gdb) disass battelle
+Dump of assembler code for function battelle:
+   0x000055f86e9cb8fa <+0>: push   %rbp
+   0x000055f86e9cb8fb <+1>: mov    %rsp,%rbp
+   0x000055f86e9cb8fe <+4>: sub    $0x10,%rsp
+   0x000055f86e9cb902 <+8>: mov    $0x0,%edi
+   0x000055f86e9cb907 <+13>:    callq  0x55f86e9cb700 <time@plt>
+   0x000055f86e9cb90c <+18>:    mov    %eax,%edi
+   0x000055f86e9cb90e <+20>:    callq  0x55f86e9cb6f0 <srand@plt>
+   0x000055f86e9cb913 <+25>:    movss  0x17d(%rip),%xmm0        # 0x55f86e9cba98
+   0x000055f86e9cb91b <+33>:    movss  %xmm0,-0x10(%rbp)
+   0x000055f86e9cb920 <+38>:    movl   $0x64,-0xc(%rbp)
+   0x000055f86e9cb927 <+45>:    callq  0x55f86e9cb730 <rand@plt>
+   0x000055f86e9cb92c <+50>:    mov    %eax,-0x8(%rbp)
+   0x000055f86e9cb92f <+53>:    mov    -0x8(%rbp),%eax
+   0x000055f86e9cb932 <+56>:    mov    %eax,%esi
+   0x000055f86e9cb934 <+58>:    lea    0x159(%rip),%rdi        # 0x55f86e9cba94
+   0x000055f86e9cb93b <+65>:    mov    $0x0,%eax
+   0x000055f86e9cb940 <+70>:    callq  0x55f86e9cb6e0 <printf@plt>
+   0x000055f86e9cb945 <+75>:    mov    0x2006c4(%rip),%rax        # 0x55f86ebcc010 <stdout@@GLIBC_2.2.5>
+   0x000055f86e9cb94c <+82>:    mov    %rax,%rdi
+   0x000055f86e9cb94f <+85>:    callq  0x55f86e9cb710 <fflush@plt>
+   0x000055f86e9cb954 <+90>:    movl   $0x2,-0x4(%rbp)
+   0x000055f86e9cb95b <+97>:    callq  0x55f86e9cb97e <it>
+=> 0x000055f86e9cb960 <+102>:   cvtsi2ssl -0xc(%rbp),%xmm0
+   0x000055f86e9cb965 <+107>:   mulss  -0x10(%rbp),%xmm0
+   0x000055f86e9cb96a <+112>:   movss  0x12a(%rip),%xmm1        # 0x55f86e9cba9c
+   0x000055f86e9cb972 <+120>:   divss  %xmm1,%xmm0
+   0x000055f86e9cb976 <+124>:   movss  %xmm0,-0x10(%rbp)
+   0x000055f86e9cb97b <+129>:   nop
+   0x000055f86e9cb97c <+130>:   leaveq 
+   0x000055f86e9cb97d <+131>:   retq   
+End of assembler dump.
+(gdb) print flag
+$5 = 1740077506
+(gdb) print &flag
+$6 = (int *) 0x7fffc0b4e118
+(gdb) info regi
+rax            0x0  0
+rbx            0x0  0
+rcx            0x7f100c8a8224   139706906608164
+rdx            0x0  0
+rsi            0x7f100cb858c0   139706909612224
+rdi            0x1  1
+rbp            0x7fffc0b4e120   0x7fffc0b4e120
+rsp            0x7fffc0b4e110   0x7fffc0b4e110
+r8             0x7f100cb858c0   139706909612224
+r9             0x7f100cda84c0   139706911851712
+r10            0x55f86f83c010   94525511155728
+r11            0x246    582
+r12            0x55f86e9cb750   94525496014672
+r13            0x7fffc0b4e2d0   140736426468048
+r14            0x0  0
+r15            0x0  0
+rip            0x55f86e9cb960   0x55f86e9cb960 <battelle+102>
+eflags         0x10293  [ CF AF SF IF RF ]
+cs             0x33 51
+ss             0x2b 43
+ds             0x0  0
+es             0x0  0
+fs             0x0  0
+gs             0x0  0
+(gdb) print  &flag-$rsp
+First argument of `-' is a pointer and second argument is neither
+an integer nor a pointer of the same type.
+(gdb) print  (char *)&flag- (char *)$rsp
+$7 = 8
+(gdb) x/10w $sp
+0x7fffc0b4e110: 0x3f652bd4  0x00000064  0x67b779c2  0x00000002
+0x7fffc0b4e120: 0xc0b4e130  0x00007fff  0x6e9cb8f7  0x000055f8
+0x7fffc0b4e130: 0xc0b4e140  0x00007fff
+(gdb) printf "0x%x\n", flag
+0x67b779c2
+(gdb) 
+
