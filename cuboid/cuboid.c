@@ -23,7 +23,7 @@ void main(int argc, char ** argv)
 		argc = 4;
 	}
 	if (argc != 4) {
-		printf("Please pass the following three arguments: x, y, z, %d\n", argc);
+		printf("Please pass the following three arguments: x, y, z\n");
 		return;
 	}	
 	x = atoi(argv[1]);

@@ -1,0 +1,87 @@
+no args
+Please pass the following three arguments: x, y, z
+help option?
+Please pass the following three arguments: x, y, z
+one bad arg
+Please pass the following three arguments: x, y, z
+one good arg
+Please pass the following three arguments: x, y, z
+no spaces between args
+Please pass the following three arguments: x, y, z
+two args
+Please pass the following three arguments: x, y, z
+two args
+Please pass the following three arguments: x, y, z
+three args with weird ending
+three args, one too big
+three args, one just past limit
+three args, one just under limit
+three good args
+Cuboid length: 3
+Cuboid width: 3
+Cuboid height: 4
+     _  _  _  
+   /_ /_ /_ /\
+  /_ /_ /_ /\/\
+ /_ /_ /_ /\/\/\
+ \ _\ _\ _\/\/\/\
+  \ _\ _\ _\/\/\/
+   \ _\ _\ _\/\/
+    \ _\ _\ _\/
+
+four args
+Please pass the following three arguments: x, y, z
+debug option args
+enable debug
+Cuboid length: 1
+Cuboid width: 3
+Cuboid height: 4
+a1: lines:8,  spaces:3
+a1: lines:8,  spaces:2
+a1: lines:8,  spaces:1
+a1: lines:8,  spaces:0
+a1: lines:8,  spaces:-1
+a1: lines:8,  spaces:-2
+a1: lines:8,  spaces:-3
+a1: lines:8,  spaces:-4
+     _  
+   /_ /\
+  /_ /\/\
+ /_ /\/\/\
+ \ _\/\/\/\
+  \ _\/\/\/
+   \ _\/\/
+    \ _\/
+
+smallest cuboid
+Cuboid length: 1
+Cuboid width: 1
+Cuboid height: 1
+   _  
+ /_ /\
+ \ _\/
+
+biggest cuboid
+Cuboid length: 9
+Cuboid width: 9
+Cuboid height: 9
+           _  _  _  _  _  _  _  _  _  
+         /_ /_ /_ /_ /_ /_ /_ /_ /_ /\
+        /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\
+       /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\
+      /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\/\
+     /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\/\/\
+    /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\/\/\/\
+   /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\/\/\/\/\
+  /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\/\/\/\/\/\
+ /_ /_ /_ /_ /_ /_ /_ /_ /_ /\/\/\/\/\/\/\/\/\
+ \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/\/\/\/\/\/\/
+  \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/\/\/\/\/\/
+   \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/\/\/\/\/
+    \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/\/\/\/
+     \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/\/\/
+      \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/\/
+       \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/\/
+        \ _\ _\ _\ _\ _\ _\ _\ _\ _\/\/
+         \ _\ _\ _\ _\ _\ _\ _\ _\ _\/
+                                         

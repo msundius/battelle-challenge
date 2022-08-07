@@ -1,0 +1,37 @@
+#!/bin/bash
+
+echo "no args"
+./cuboid
+echo "help option?"
+./cuboid --help
+echo "one bad arg"
+./cuboid x
+echo "one good arg"
+./cuboid 1
+echo "no spaces between args"
+./cuboid 234
+echo "two args"
+./cuboid x 2
+echo "two args"
+./cuboid 1 2
+echo "three args with weird ending"
+./cuboid 234 3 4y
+echo "three args, one too big"
+./cuboid 234 3  4
+echo "three args, one just past limit"
+./cuboid  11 3 4
+echo "three args, one just under limit"
+./cuboid  1 0 4
+
+echo "three good args"
+./cuboid  3 3 4
+echo "four args"
+./cuboid  8 3 4 x
+echo "debug option args"
+./cuboid  1 3 4 d
+echo "smallest cuboid"
+./cuboid  1 1 1
+echo "biggest cuboid"
+./cuboid  9 9 9
+
+
