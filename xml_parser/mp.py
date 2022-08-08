@@ -1,3 +1,6 @@
+#program to parse threat file and printout those
+# that reference gitlab
+#
 import xml.etree.ElementTree as ET
 
 tree = ET.parse('allitems-cvrf-year-2022.xml')
@@ -62,13 +65,5 @@ for child in root:
             print()
             count +=1
 
-print(count)
+#print(count)
 
-#                    if 'URL' in bits.tag:
-#                        if 'gitlab' in bits.text:
-#                            print(bits.text)
-#                            printit = True
-#                    if 'Description' in bits.tag:
-#                        if 'gitlab' in bits.text:
-#                            print(bits.text)
-#                            printit = True

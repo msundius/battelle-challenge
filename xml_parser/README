@@ -1,0 +1,8 @@
+PROGRAM TO PRINT OUT Common Vulnerability Reporting Framework issues
+ that refer to gitlab
+
+reqired:
+  python3, xml.etree.ElementTree, allitems-cvrf-year-2022.xml
+
+run program :
+  python3 ./mp.py
