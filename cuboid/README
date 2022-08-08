@@ -1,0 +1,11 @@
+cuboid program. 
+
+compile:
+  gcc -o cuboid cuboid.c
+
+run:
+  ./cuboid <x> <y> <z> [d]
+
+ x, y & z are required and must be 0 < value < 10
+ d is optional and enables debug mode.
+
