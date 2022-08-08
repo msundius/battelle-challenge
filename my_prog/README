@@ -1,0 +1,10 @@
+working solution program is called "prog" in this directory build:
+gcc -o prog prog.c -zlazy
+
+run:
+./prog [d]
+
+prints out program and library base addresses.
+
+debug (d option) also prints out filenames
+

@@ -1,3 +1,8 @@
+
+/* another program exploring program header */
+/* print out the program headers  for running program */
+
+
 #include <err.h>
 #include <fcntl.h>
 #include <gelf.h>
