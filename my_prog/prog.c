@@ -25,20 +25,24 @@ int main(int argc, char **argv)
     lib_t *libp = gotp->lib_ptr;
 
     if (argc > 1) {
-        printf("hello world.\n");
     
         if (*argv[1] == 'd') {
             debug = 1;
         }
     }
 
+    int count = 0;
     while (libp != NULL) {
         printf("0x%016lx", (long unsigned int)libp->load_addr);
         if (debug) {
-            printf(" libname: %s", libp->name);
+            if (count)
+                printf(" libname: %s", libp->name);
+            else
+                printf(" program: %s", argv[0]);
         }
         printf("\n");
         libp = libp->next;
+        count++;
     }
 
     return 0;
